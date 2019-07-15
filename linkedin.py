@@ -30,23 +30,6 @@ def type_if_exist(path_locator, keys_to_send):
         element.send_keys(keys_to_send)
 
 
-def active_action(action):
-    start_button = 'button#btn-start-workday'
-    stop_button = 'button#btn-stop-workday'
-    lunch_button = 'button#btn-pause-lunch'
-    come_back_from_lunch_button = 'button#btn-resume-workday'
-    confirm_button = 'button.swal2-confirm.swal2-styled'
-    switch = {
-        'start' : start_button,
-        'stop' : stop_button,
-        'lunch' : lunch_button,
-        'comBackFromLunch' : come_back_from_lunch_button
-    }
-    click_if_exist(switch.get(action, 'error'))
-    time.sleep(2)
-    click_if_exist(confirm_button)
-
-
 # driver = webdriver.Remote("firefox:4444")
 driver = webdriver.Firefox()
 time.sleep(5)
@@ -61,7 +44,6 @@ try:
             driver.switch_to.default_content()
 except:
     print('no se puede cambiar a iframe')
-# driver.switch_to.frame(driver.find_elements_by_tag_name("iframe")[0])
 
 type_if_exist('input#username', 'user@mail')
 time.sleep(3)
