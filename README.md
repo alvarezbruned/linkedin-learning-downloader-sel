@@ -8,7 +8,7 @@ example:
 https://www.linkeidn.com/learning/python-para-data-science-y-big-data-esencial
 in code only write 'python-para-data-science-y-big-data-esencial'
 
-The baseVideoPath is necessary change, is the destiny of videos courses, this in future it will be as a variable in yaml file.
+The baseVideoPath is necessary to change, is the destiny of videos courses, this in future it will be as a variable in yaml file.
 
 ## Necessary installs:
 pip3 install -r requirements.txt
