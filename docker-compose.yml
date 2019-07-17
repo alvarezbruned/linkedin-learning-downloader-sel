@@ -1,0 +1,18 @@
+version: '2'
+services:
+  firefox:
+    image: albertalvarezbruned/firefox:sel
+    ports:
+      - 4444:4444
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./linkedin.py:/home/appuser/linkedin.py
+    environment:
+      - 'DISPLAY=:0'
+      - 'IN_USER=miuserLinkedinPremium'
+      - 'IN_PASS=mipassLinkedinPremium'
+      - 'IN_COURSES=courses-separated-by-pipes|another-course'
+    hostname: firefox
+    network_mode: 'host'
+    entrypoint: python3 /home/appuser/linkedin.py
+

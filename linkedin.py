@@ -91,17 +91,22 @@ for course in courses:
             video.click()
             time.sleep(8)
             mp4 = ''
+            numVideoCasted = ''
+            if numVideo < 10:
+                numVideoCasted = '0' + str(numVideo)
+            else:
+                numVideoCasted = numVideo
             if is_in_page('.vjs-tech'):
                 mp4 = is_in_page('.vjs-tech').get_attribute('src')
                 print(mp4)
-                urllib.request.urlretrieve(mp4, baseVideoPath + '/' + course + '/' + str(numVideo) + '-' + title + '.mp4')
+                urllib.request.urlretrieve(mp4, baseVideoPath + '/' + course + '/' + numVideoCasted + '-' + title + '.mp4')
             else:
                 video.click()
                 time.sleep(12)
                 if is_in_page('.vjs-tech'):
                     mp4 = is_in_page('.vjs-tech').get_attribute('src')
                     print(mp4)
-                    urllib.request.urlretrieve(mp4, baseVideoPath + '/' + course + '/' + str(numVideo) + '-' + title + '.mp4')
+                    urllib.request.urlretrieve(mp4, baseVideoPath + '/' + course + '/' + numVideoCasted + '-' + title + '.mp4')
             time.sleep(15)
             numVideo = numVideo + 1
     driver.switch_to.default_content()
