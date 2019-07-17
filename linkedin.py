@@ -95,7 +95,7 @@ for course in courses:
             if numVideo < 10:
                 numVideoCasted = '0' + str(numVideo)
             else:
-                numVideoCasted = numVideo
+                numVideoCasted = str(numVideo)
             if is_in_page('.vjs-tech'):
                 mp4 = is_in_page('.vjs-tech').get_attribute('src')
                 print(mp4)
